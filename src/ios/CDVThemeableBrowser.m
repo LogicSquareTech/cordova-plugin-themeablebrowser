@@ -67,15 +67,10 @@
 
 @implementation CDVThemeableBrowser
 
-- (CDVThemeableBrowser*)initWithWebView:(UIWebView*)theWebView
+- (void)pluginInitialize
 {
-    self = [super initWithWebView:theWebView];
-    if (self != nil) {
-        _isShown = NO;
-        _callbackIdPattern = nil;
-    }
-
-    return self;
+    _isShown = NO;
+    _callbackIdPattern = nil;
 }
 
 - (void)onReset
@@ -851,7 +846,7 @@
             altDensity = 1.0;
         }
         NSData* data = [NSData dataWithContentsOfFile:path];
-        result = [UIImage imageWithData:data scale:3.0];
+        result = [UIImage imageWithData:data scale:1.0];
     }
     
     return result;
